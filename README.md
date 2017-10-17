@@ -1,2 +1,1 @@
-# covoit-cgi
-covoit-cgi
+# covoit-hook
