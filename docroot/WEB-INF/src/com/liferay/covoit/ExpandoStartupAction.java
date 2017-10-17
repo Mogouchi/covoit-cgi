@@ -1,5 +1,8 @@
-package com.liferay.covoit;
+package com.liferay.covoit.hook;
 
+import java.util.Date;
+
+import com.liferay.counter.service.CounterLocalServiceUtil;
 import com.liferay.portal.kernel.events.SimpleAction;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
@@ -11,8 +14,11 @@ import com.liferay.portal.model.Role;
 import com.liferay.portal.model.RoleConstants;
 import com.liferay.portal.model.User;
 import com.liferay.portal.security.permission.ActionKeys;
+import com.liferay.portal.service.ClassNameLocalServiceUtil;
 import com.liferay.portal.service.ResourcePermissionLocalServiceUtil;
 import com.liferay.portal.service.RoleLocalServiceUtil;
+import com.liferay.portal.service.UserLocalServiceUtil;
+import com.liferay.portal.util.PortalUtil;
 import com.liferay.portlet.expando.DuplicateColumnNameException;
 import com.liferay.portlet.expando.DuplicateTableNameException;
 import com.liferay.portlet.expando.model.ExpandoColumn;
@@ -22,7 +28,7 @@ import com.liferay.portlet.expando.service.ExpandoColumnLocalServiceUtil;
 import com.liferay.portlet.expando.service.ExpandoTableLocalServiceUtil;
 
 public class ExpandoStartupAction extends SimpleAction {
-//comment
+
 	/**
 	 * Creates custom fields
 	 */
@@ -80,7 +86,7 @@ public class ExpandoStartupAction extends SimpleAction {
 				properties.setProperty("display-type", "selection-list");
 				cityColumn.setTypeSettingsProperties(properties);			
 				
-				String defaultCities = "Bordeaux,Mérignac,Le Haillan,Bruges,St Médard en Jalles,St Jean d'Illac";
+				String defaultCities = "Bordeaux,M�rignac,Le Haillan,Bruges,St M�dard en Jalles,St Jean d'Illac";
 				cityColumn.setDefaultData(defaultCities);
 				
 				int type = 16;
@@ -184,6 +190,13 @@ public class ExpandoStartupAction extends SimpleAction {
       }
       
 	}
+	
+	/**
+	 * Set new roles : driver and passenger 
+	 */
+
+	//test
+	//log
 	
 	private static Log _log = LogFactoryUtil.getLog(ExpandoStartupAction.class);
 	
