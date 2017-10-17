@@ -22,7 +22,7 @@ import com.liferay.portlet.expando.service.ExpandoColumnLocalServiceUtil;
 import com.liferay.portlet.expando.service.ExpandoTableLocalServiceUtil;
 
 public class ExpandoStartupAction extends SimpleAction {
-
+//comment
 	/**
 	 * Creates custom fields
 	 */
@@ -80,7 +80,7 @@ public class ExpandoStartupAction extends SimpleAction {
 				properties.setProperty("display-type", "selection-list");
 				cityColumn.setTypeSettingsProperties(properties);			
 				
-				String defaultCities = "Bordeaux,Mérignac,Le Haillan,Bruges,St Médard en Jalles,St Jean d'Illac";
+				String defaultCities = "Bordeaux,MÃ©rignac,Le Haillan,Bruges,St MÃ©dard en Jalles,St Jean d'Illac";
 				cityColumn.setDefaultData(defaultCities);
 				
 				int type = 16;
